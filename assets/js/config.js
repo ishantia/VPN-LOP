@@ -17,7 +17,7 @@ window.__APP_CONFIG__ = {
   brandName: 'Subscription Portal',
 
   // Contact / Order link (e.g. Telegram channel, bot, or customer support)
-  contactUrl: 'https://t.me/vpnlopbot',
+  contactUrl: 'https://t.me/L0FIS',
   contactText: 'Support & Order',
 
   // Default language: 'fa' (Persian) or 'en' (English)
