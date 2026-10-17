@@ -11,13 +11,13 @@ window.__APP_CONFIG__ = {
   // e.g. "https://pricing-api.your-subdomain.workers.dev"
   apiUrl: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:8787'
-    : 'https://pricing-worker.yourname.workers.dev',
+    : 'https://pricing-worker.boobool6975.workers.dev',
 
   // Brand name shown in header and meta
   brandName: 'Subscription Portal',
 
   // Contact / Order link (e.g. Telegram channel, bot, or customer support)
-  contactUrl: 'https://t.me/your_telegram_bot',
+  contactUrl: 'https://t.me/vpnlopbot',
   contactText: 'Support & Order',
 
   // Default language: 'fa' (Persian) or 'en' (English)

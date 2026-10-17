@@ -5,8 +5,8 @@ compatibility_date = "2024-10-01"
 # Cloudflare KV binding for pricing lists
 [[kv_namespaces]]
 binding = "PRICING_KV"
-id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
-preview_id = "REPLACE_WITH_YOUR_PREVIEW_KV_NAMESPACE_ID"
+id = "e24b2ff3d93f4b44a0122d430b7214b3"
+preview_id = "46b635f59143411b916255c082451a35"
 
 # Public environment variables
 [vars]
