@@ -1,0 +1,77 @@
+name: Deploy Static Website to GitHub Pages & Run Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # 1. Run Unit Tests and Typecheck for the Worker backend
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: 'worker/package-lock.json'
+
+      - name: Install Worker Dependencies
+        working-directory: worker
+        run: npm ci
+
+      - name: Run Backend Unit Tests
+        working-directory: worker
+        run: npm test
+
+      - name: Run TypeScript Typecheck
+        working-directory: worker
+        run: npm run typecheck
+
+  # 2. Deploy Static Frontend to GitHub Pages (only on push to main)
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Inject Worker API URL (if configured in Repository Variables)
+        run: |
+          if [ -n "${{ vars.WORKER_API_URL }}" ]; then
+            echo "Injecting configured WORKER_API_URL: ${{ vars.WORKER_API_URL }}"
+            sed -i "s|apiUrl: .*|apiUrl: '${{ vars.WORKER_API_URL }}',|g" assets/js/config.js
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
