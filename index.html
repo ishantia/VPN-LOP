@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تعرفه‌های ویژه | پلن‌های اشتراک</title>
+  <meta name="description" content="مشاهده آخرین تعرفه‌ها و پلن‌های اشتراک پرسرعت با به‌روزرسانی آنی و تحویل خودکار">
+  <meta name="theme-color" content="#0a0e17">
+
+  <!-- OpenGraph / Social Meta (Neutral & Generic) -->
+  <meta property="og:title" content="پلن‌های اشتراک">
+  <meta property="og:description" content="مشاهده آخرین تعرفه‌ها و پلن‌های در دسترس با به‌روزرسانی آنی">
+  <meta property="og:type" content="website">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Preconnect to Google Fonts for Vazirmatn if online -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Site Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="Home">
+        <span class="brand-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </span>
+        <span id="brand-name">Subscription Portal</span>
+      </a>
+
+      <div class="header-controls">
+        <!-- Manual Refresh Button -->
+        <button id="refresh-btn" class="icon-btn" aria-label="Refresh Prices" title="Refresh">
+          <svg viewBox="0 0 24 24">
+            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"></path>
+          </svg>
+        </button>
+
+        <!-- Language Switcher -->
+        <button id="lang-toggle-btn" class="icon-btn lang-btn" aria-label="Switch Language">
+          EN
+        </button>
+
+        <!-- Dark/Light Theme Toggle -->
+        <button id="theme-toggle-btn" class="icon-btn" aria-label="Switch Theme">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="icon-sun" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="icon-moon" style="display: none;" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="site-main" role="main">
+    <div class="container">
+      <!-- Hero Header -->
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-badge">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="hero-badge-text">سرویس فعال</span>
+        </div>
+        <h1 id="page-title" class="hero-title">پلن‌های ویژه</h1>
+        <p id="page-description" class="hero-subtitle">
+          سریع، پایدار و با دسترسی نامحدود. پلن مناسب خود را انتخاب کنید.
+        </p>
+      </section>
+
+      <!-- Offline / Demo Alert Banner -->
+      <div id="alert-banner" class="alert-banner" role="status" aria-live="polite"></div>
+
+      <!-- Plans Grid / Status Container -->
+      <section aria-label="Pricing Plans">
+        <div id="plans-container" class="plans-grid">
+          <!-- Dynamic cards or skeleton injected via app.js -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-info">
+        <p>© <span id="footer-year">2026</span> <strong id="footer-brand">Subscription Portal</strong>. کلیه حقوق محفوظ است.</p>
+        <p id="last-updated" class="footer-updated"></p>
+      </div>
+      <div class="footer-links">
+        <a id="contact-link" class="footer-link" href="#" target="_blank" rel="noopener noreferrer">سفارش و پشتیبانی</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
