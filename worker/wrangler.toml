@@ -1,0 +1,21 @@
+name = "pricing-worker"
+main = "src/index.ts"
+compatibility_date = "2024-10-01"
+
+# Cloudflare KV binding for pricing lists
+[[kv_namespaces]]
+binding = "PRICING_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_YOUR_PREVIEW_KV_NAMESPACE_ID"
+
+# Public environment variables
+[vars]
+DEFAULT_TITLE = "Special Plans"
+DEFAULT_CURRENCY = "TOMAN"
+CORS_ORIGIN = "*"
+
+# Secret variables configured using `wrangler secret put <NAME>`:
+# - TELEGRAM_BOT_TOKEN
+# - TELEGRAM_WEBHOOK_SECRET
+# - ADMIN_TELEGRAM_IDS (comma-separated list of numeric IDs, e.g. "12345678,98765432")
+# - ADMIN_API_SECRET (random string for authenticating direct admin API calls)

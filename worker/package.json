@@ -1,0 +1,26 @@
+{
+  "name": "pricing-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker backend for dynamic pricing website with Telegram bot management",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "telegram-bot",
+    "dynamic-pricing",
+    "kv-storage"
+  ],
+  "author": "ishantia",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250214.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  }
+}
